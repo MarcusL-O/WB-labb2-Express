@@ -4,17 +4,18 @@ const cors = require("cors");
 const axios = require("axios");
 
 const app =express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000; 
 
 app.use(cors()); // enable CORS, allows communication 
 app.use(express.json());
 app.use(express.static("public"));
 
-
+//Default route
 app.get("/", (req, res) => {
     res.send("Express API is running smoooth")
 });
 
+//Start and listens to PORT 
 app.listen(PORT, () => {
     console.log(`Listening on port ${PORT}`)
 });
